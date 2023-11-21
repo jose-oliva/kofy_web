@@ -13,9 +13,6 @@ const Chat = () => {
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
           <p className="font-semibold text-lg dark:text-gray-200">Mensajes</p>
-          <button type="button" className="text-white  text-xs rounded p-1 px-2 bg-orange">
-            5
-          </button>
         </div>
         <Button
           icon={<MdOutlineCancel />}

@@ -34,24 +34,6 @@ export const gridOrderStatus = (props) => (
   </button>
 );
 
-export const kanbanGrid = [
-  { headerText: 'Por Hacer',
-    keyField: 'Open',
-    allowToggle: true },
-
-  { headerText: 'En Progreso',
-    keyField: 'InProgress',
-    allowToggle: true },
-
-  { headerText: 'Revisando',
-    keyField: 'Testing',
-    allowToggle: true,
-    isExpanded: false },
-
-  { headerText: 'Terminado',
-    keyField: 'Close',
-    allowToggle: true },
-];
 const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
@@ -256,26 +238,6 @@ export const barCustomSeries = [
   },
 ];
 
-export const LinePrimaryXAxis = {
-  valueType: 'DateTime',
-  labelFormat: 'y',
-  intervalType: 'Years',
-  edgeLabelPlacement: 'Shift',
-  majorGridLines: { width: 0 },
-  background: 'white',
-};
-
-export const LinePrimaryYAxis = {
-  labelFormat: '{value}%',
-  rangePadding: 'None',
-  minimum: 0,
-  maximum: 100,
-  interval: 20,
-  lineStyle: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
-};
-
 export const customersGrid = [
   { type: 'checkbox', width: '50' },
   { headerText: 'Name',
@@ -303,12 +265,10 @@ export const customersGrid = [
     width: '100',
     format: 'yMd',
     textAlign: 'Center' },
-
   { field: 'Location',
     headerText: 'Location',
     width: '150',
     textAlign: 'Center' },
-
   { field: 'CustomerID',
     headerText: 'Customer ID',
     width: '120',
@@ -336,13 +296,11 @@ export const employeesGrid = [
     width: '120',
     textAlign: 'Center',
     template: gridEmployeeCountry },
-
   { field: 'HireDate',
     headerText: 'Contratacion',
     width: '135',
     format: 'yMd',
     textAlign: 'Center' },
-
   { field: 'ReportsTo',
     headerText: 'Encargado',
     width: '120',
@@ -363,7 +321,6 @@ export const links = [
       },
     ],
   },
-
   {
     title: 'colaboradores',
     links: [
@@ -556,7 +513,7 @@ export const employeesData = [
     Name: 'Eugenio Garza',
     Title: 'CEO',
     HireDate: '19/11/2023',
-    Country: 'Mexico',
+    Country: 'Cielo',
     ReportsTo: 'N/A',
     EmployeeImage:
     avatar,
@@ -584,7 +541,7 @@ export const employeesData = [
   {
     EmployeeID: 4,
     Name: 'Andrea San Martin',
-    Title: 'Swift Developer',
+    Title: 'Android Developer',
     HireDate: '20/11/2023',
     Country: 'Mexico',
     ReportsTo: 'Eugenio',
@@ -594,7 +551,7 @@ export const employeesData = [
   {
     EmployeeID: 5,
     Name: 'Scarlet Soto',
-    Title: 'React Developer',
+    Title: 'Cybersecurity',
     HireDate: '20/11/2023',
     Country: 'Mexico',
     ReportsTo: 'Eugenio',
@@ -678,25 +635,20 @@ export const stackedChartData = [
 ];
 
 export const stackedCustomSeries = [
-
   { dataSource: stackedChartData[0],
     xName: 'x',
     yName: 'y',
     name: 'Presupuesto',
     type: 'StackingColumn',
     background: 'blue',
-
   },
-
   { dataSource: stackedChartData[1],
     xName: 'x',
     yName: 'y',
     name: 'Gastos',
     type: 'StackingColumn',
     background: 'red',
-
   },
-
 ];
 
 export const stackedPrimaryXAxis = {
@@ -722,29 +674,47 @@ export const stackedPrimaryYAxis = {
   labelFormat: '{value}',
 };
 
+export const kanbanGrid = [
+  { headerText: 'Por Hacer',
+    keyField: 'Por Hacer',
+    allowToggle: true },
+
+  { headerText: 'En Progreso',
+    keyField: 'En Progreso',
+    allowToggle: true },
+
+  { headerText: 'Revisando',
+    keyField: 'Revisando',
+    allowToggle: true },
+
+  { headerText: 'Terminado',
+    keyField: 'Terminado',
+    allowToggle: true },
+];
+
 export const kanbanData = [
   {
     Id: 'Tarea 1',
     Title: 'Task - 29001',
-    Status: 'Open',
+    Status: 'Por Hacer',
     Summary: 'Presentar en Expo-ingenierias',
   },
   {
     Id: 'Tarea 2',
     Title: 'Task - 29002',
-    Status: 'InProgress',
+    Status: 'En Progreso',
     Summary: 'Terminar de conectar las plataformas',
-  },
-  {
-    Id: 'Tarea 4',
-    Title: 'Task - 29010',
-    Status: 'Close',
-    Summary: 'Presentar a WizeLine y Apple',
   },
   {
     Id: 'Tarea 3',
     Title: 'Task - 29030',
-    Status: 'Testing',
+    Status: 'Revisando',
     Summary: 'Arreglar bugs',
+  },
+  {
+    Id: 'Tarea 4',
+    Title: 'Task - 29010',
+    Status: 'Terminado',
+    Summary: 'Presentar a WizeLine y Apple',
   },
 ];

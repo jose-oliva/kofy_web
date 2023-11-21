@@ -17,16 +17,16 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
       <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]} />
       <AccumulationSeriesCollectionDirective>
         <AccumulationSeriesDirective
-          name="Sale"
+          name="Dato"
           dataSource={data}
           xName="x"
           yName="y"
           innerRadius="40%"
           startAngle={0}
           endAngle={360}
-          radius="70%"
+          radius="100%"
           explode
-          explodeOffset="10%"
+          explodeOffset="5%"
           explodeIndex={2}
           dataLabel={{
             visible: true,

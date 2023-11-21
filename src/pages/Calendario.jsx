@@ -8,13 +8,6 @@ import { Header } from '../components';
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
 const Scheduler = () => {
-  /* const [scheduleObj, setScheduleObj] = useState();
-
-  const change = (args) => {
-    scheduleObj.selectedDate = args.value;
-    scheduleObj.dataBind();
-  }; */
-
   const onDragStart = (arg) => {
     // eslint-disable-next-line no-param-reassign
     arg.navigation.enable = true;
@@ -25,8 +18,6 @@ const Scheduler = () => {
       <Header title="Calendario" />
       <ScheduleComponent
         height="650px"
-        // ref={(schedule) => setScheduleObj(schedule)}
-        selectedDate={new Date(2021, 0, 10)}
         eventSettings={{ dataSource: scheduleData }}
         dragStart={onDragStart}
       >

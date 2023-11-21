@@ -10,14 +10,14 @@ class SparkLine extends React.PureComponent {
         id={id}
         height={height}
         width={width}
-        lineWidth={1}
+        lineWidth={5}
         valueType="Numeric"
         fill={color}
-        border={{ color: currentColor, width: 2 }}
+        border={{ color: currentColor, width: 1 }}
         tooltipSettings={{
           visible: true,
           // eslint-disable-next-line no-template-curly-in-string
-          format: '${x} : data ${yval}',
+          format: 'mes ${x}',
           trackLineSettings: {
             visible: true,
           },

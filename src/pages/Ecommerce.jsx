@@ -1,17 +1,10 @@
 import React from 'react';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { GoDiamond } from 'react-icons/go';
-// import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 import { Stacked, Pie, Button, SparkLine } from '../components';
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
-
-/* const DropDown = ({ currentMode }) => (
-  <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
-    <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color: (currentMode === 'Dark') && 'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
-  </div>
-); */
 
 const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
@@ -60,19 +53,19 @@ const Ecommerce = () => {
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
           <div className="flex justify-between">
-            <p className="font-semibold text-xl">Medicion de uso de App</p>
+            <p className="font-semibold text-xl">Finanzas</p>
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
                   <GoDiamond />
                 </span>
-                <span>Espectativa</span>
+                <span>Gastos</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
                   <GoDiamond />
                 </span>
-                <span>Realidad</span>
+                <span>Presupuesto</span>
               </p>
             </div>
           </div>
@@ -80,15 +73,15 @@ const Ecommerce = () => {
             <div className=" border-r-1 border-color m-4 pr-10">
               <div>
                 <p>
-                  <span className="text-3xl font-semibold">26,046</span>
-                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
+                  <span className="text-3xl font-semibold">46,046</span>
+                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-red-400 ml-3 text-xs">
                     23%
                   </span>
                 </p>
                 <p className="text-gray-500 mt-1">Total</p>
               </div>
               <div className="mt-8">
-                <p className="text-3xl font-semibold">40,000</p>
+                <p className="text-3xl font-semibold">20,000</p>
 
                 <p className="text-gray-500 mt-1">Espectativa</p>
               </div>
@@ -120,7 +113,7 @@ const Ecommerce = () => {
 
               <div>
                 <p className="text-2xl text-white font-semibold mt-8">1,456</p>
-                <p className="text-gray-200">Uso mensual</p>
+                <p className="text-gray-200">Uso mensual promedio</p>
               </div>
             </div>
 
@@ -131,8 +124,8 @@ const Ecommerce = () => {
 
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
             <div>
-              <p className="text-2xl font-semibold ">34,218</p>
-              <p className="text-gray-400">Reporte de funciones</p>
+              <p className="text-2xl font-semibold ">218</p>
+              <p className="text-gray-400">Reporte de errores fatales</p>
             </div>
 
             <div className="w-40">
@@ -141,7 +134,6 @@ const Ecommerce = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };
