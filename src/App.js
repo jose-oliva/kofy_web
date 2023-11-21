@@ -35,6 +35,7 @@ const App = () => {
                 onClick={() => setThemeSettings(true)}
                 style={{ background: currentColor, borderRadius: '50%' }}
                 className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+                aria-label="Settings"
               >
                 <FiSettings />
               </button>

@@ -1,17 +1,17 @@
 import React from 'react';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { GoDiamond } from 'react-icons/go';
-import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
+// import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 import { Stacked, Pie, Button, SparkLine } from '../components';
-import { earningData, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
-const DropDown = ({ currentMode }) => (
+/* const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
     <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color: (currentMode === 'Dark') && 'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
   </div>
-);
+); */
 
 const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
@@ -29,6 +29,7 @@ const Ecommerce = () => {
               type="button"
               style={{ backgroundColor: currentColor }}
               className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
+              aria-label="Add new user"
             >
               <BsFillPersonPlusFill />
             </button>

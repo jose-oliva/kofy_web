@@ -19,6 +19,7 @@ const ThemeSettings = () => {
             onClick={() => setThemeSettings(false)}
             style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%' }}
             className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
+            aria-label="Close theme settings"
           >
             <MdOutlineCancel />
           </button>
@@ -72,6 +73,7 @@ const ThemeSettings = () => {
                     className="h-10 w-10 rounded-full cursor-pointer"
                     style={{ backgroundColor: item.color }}
                     onClick={() => setColor(item.color)}
+                    aria-label="Change theme color"
                   >
                     <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block' : 'hidden'}`} />
                   </button>

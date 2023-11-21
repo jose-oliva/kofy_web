@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React /* { useState } */ from 'react';
 import { ScheduleComponent, ViewsDirective, ViewDirective, Day, Week, WorkWeek, Month, Agenda, Inject, Resize, DragAndDrop } from '@syncfusion/ej2-react-schedule';
 
 import { scheduleData } from '../data/dummy';
@@ -8,12 +8,12 @@ import { Header } from '../components';
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
 const Scheduler = () => {
-  const [scheduleObj, setScheduleObj] = useState();
+  /* const [scheduleObj, setScheduleObj] = useState();
 
   const change = (args) => {
     scheduleObj.selectedDate = args.value;
     scheduleObj.dataBind();
-  };
+  }; */
 
   const onDragStart = (arg) => {
     // eslint-disable-next-line no-param-reassign
@@ -25,7 +25,7 @@ const Scheduler = () => {
       <Header title="Calendario" />
       <ScheduleComponent
         height="650px"
-        ref={(schedule) => setScheduleObj(schedule)}
+        // ref={(schedule) => setScheduleObj(schedule)}
         selectedDate={new Date(2021, 0, 10)}
         eventSettings={{ dataSource: scheduleData }}
         dragStart={onDragStart}
