@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Calendario, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorMapping } from './pages';
+import { Ecommerce, Calendario, Empleados, Apilada, Registrar, Kanban, Area, Barras, Pastel } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -69,23 +69,19 @@ const App = () => {
                 <Route path="/" element={(<Ecommerce />)} />
                 <Route path="/ecommerce" element={(<Ecommerce />)} />
 
-                {/* pages  */}
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                {/* colaboradores  */}
+                <Route path="/empleados" element={<Empleados />} />
+                <Route path="/registrar" element={<Registrar />} />
 
-                {/* apps  */}
-                <Route path="/kanban" element={<Kanban />} />
+                {/* planeacion  */}
                 <Route path="/calendario" element={<Calendario />} />
+                <Route path="/kanban" element={<Kanban />} />
 
-                {/* charts  */}
-                <Route path="/line" element={<Line />} />
+                {/* graficas  */}
                 <Route path="/area" element={<Area />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/financial" element={<Financial />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/pyramid" element={<Pyramid />} />
-                <Route path="/stacked" element={<Stacked />} />
+                <Route path="/barras" element={<Barras />} />
+                <Route path="/pastel" element={<Pastel />} />
+                <Route path="/apilada" element={<Apilada />} />
 
               </Routes>
             </div>
