@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Header } from '../components';
 
 const Tarjeta = () => {
@@ -9,13 +8,13 @@ const Tarjeta = () => {
     const options = {
       headers: {
         'Content-Type': 'application/json',
-        // Esto no resolverá el problema de CORS si el servidor no acepta tu origen.
-        'Access-Control-Allow-Origin': 'https://kofy-back.onrender.com',
       },
     };
-    axios.get('https://kofy-back.onrender.com/dashboard/getCardCollections', options)
-      .then((response) => {
-        setCollections(response.data);
+
+    fetch('https://kofy-back.onrender.com/dashboard/getCardCollections', options)
+      .then((response) => response.json())
+      .then((data) => {
+        setCollections(data);
       })
       .catch((error) => {
         // eslint-disable-next-line
