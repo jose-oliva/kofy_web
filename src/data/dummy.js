@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineAreaChart, AiOutlineBarChart } from 'react-icons/ai';
 import { FiEdit, FiPieChart, FiBarChart, FiCreditCard } from 'react-icons/fi';
-import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield } from 'react-icons/bs';
+import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield, BsFillExclamationSquareFill } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
@@ -132,8 +132,8 @@ const areaChartData = [
   ],
   [
     { x: new Date(2014, 0, 1), y: 20.8 },
-    { x: new Date(2015, 0, 1), y: 21.3 },
-    { x: new Date(2016, 0, 1), y: 11.1 },
+    { x: new Date(2015, 0, 1), y: 19.3 },
+    { x: new Date(2016, 0, 1), y: 15.1 },
     { x: new Date(2017, 0, 1), y: 21.6 },
     { x: new Date(2018, 0, 1), y: 20 },
     { x: new Date(2019, 0, 1), y: 15.7 },
@@ -365,6 +365,15 @@ export const links = [
       {
         name: 'apilada',
         icon: <AiOutlineBarChart />,
+      },
+    ],
+  },
+  {
+    title: 'Sesion',
+    links: [
+      {
+        name: 'Salir',
+        icon: <BsFillExclamationSquareFill />,
       },
     ],
   },

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faKey, faKitMedical } from '@fortawesome/free-solid-svg-icons';
-import './login.css';
+import '../App.css';
 
 function LoginPage({ onLogin }) {
   const [isSignUpMode, setIsSignUpMode] = useState(false);

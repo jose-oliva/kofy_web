@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import LoginPage from './pages/login/login';
+import LoginPage from './pages/login';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Ecommerce, Calendario, Empleados, Apilada, Registrar, Kanban, Area, Barras, Pastel } from './pages';
@@ -32,6 +32,8 @@ const App = () => {
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <Routes>
+          {/* Ruta agregada para /login */}
+          <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
           {!isLoggedIn ? (
             <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
           ) : (
