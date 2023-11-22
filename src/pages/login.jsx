@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faKey, faKitMedical } from '@fortawesome/free-solid-svg-icons';
+import admins from '../data/admin.png';
+import doctors from '../data/doctors.png';
 import '../App.css';
 
 function LoginPage({ onLogin }) {
@@ -18,8 +20,7 @@ function LoginPage({ onLogin }) {
   };
 
   const handleAdminLogin = (e) => {
-    e.preventDefault(); // Prevent default form submission
-    // Replace this with your real authentication logic
+    e.preventDefault();
     if (username === 'admin' && password === 'admin') {
       onLogin();
     } else {
@@ -38,7 +39,7 @@ function LoginPage({ onLogin }) {
               <FontAwesomeIcon icon={faKitMedical} className="my-auto_mx-auto" />
               <input type="text" placeholder="Token" />
             </div>
-            <button type="button" className="btn transparent" onClick={handleSignUpClick}>
+            <button type="button" className="btn" onClick={handleSignUpClick}>
               Iniciar Sesion
             </button>
           </form>
@@ -86,7 +87,7 @@ function LoginPage({ onLogin }) {
               Iniciar Sesion como Administrador
             </button>
           </div>
-          <img src="/img/dogLogin1.svg" className="image" alt="" />
+          <img src={doctors} className="image" alt="" />
         </div>
         <div className="panel right-panel">
           <div className="content">
@@ -98,7 +99,7 @@ function LoginPage({ onLogin }) {
               Regresar
             </button>
           </div>
-          <img src="/img/dogLogin.svg" className="image" alt="" />
+          <img src={admins} className="image" alt="" />
         </div>
       </div>
     </div>

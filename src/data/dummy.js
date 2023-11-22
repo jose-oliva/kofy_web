@@ -329,7 +329,7 @@ export const links = [
         icon: <IoMdContacts />,
       },
       {
-        name: 'Registrar',
+        name: 'registrar',
         icon: <RiContactsLine />,
       },
     ],
@@ -369,7 +369,7 @@ export const links = [
     ],
   },
   {
-    title: 'Sesion',
+    title: 'cerrar sesion',
     links: [
       {
         name: 'Salir',

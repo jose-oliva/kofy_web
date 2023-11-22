@@ -5,7 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import LoginPage from './pages/login';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Calendario, Empleados, Apilada, Registrar, Kanban, Area, Barras, Pastel } from './pages';
+import { Ecommerce, Calendario, Empleados, Registrar, Apilada, Kanban, Area, Barras, Pastel } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
