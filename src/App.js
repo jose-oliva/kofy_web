@@ -5,7 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import LoginPage from './pages/login';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Tarjetas, Calendario, Empleados, Registrar, Apilada, Kanban, Area, Barras, Pastel } from './pages';
+import { Ecommerce, Tarjeta, Calendario, Empleados, Registrar, Apilada, Kanban, Area, Barras, Pastel } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -40,7 +40,7 @@ const App = () => {
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Ecommerce />} />
               <Route path="ecommerce" element={<Ecommerce />} />
-              <Route path="tarjetas" element={<Tarjetas />} />
+              <Route path="tarjetas" element={<Tarjeta />} />
               <Route path="empleados" element={<Empleados />} />
               <Route path="registrar" element={<Registrar />} />
               <Route path="calendario" element={<Calendario />} />

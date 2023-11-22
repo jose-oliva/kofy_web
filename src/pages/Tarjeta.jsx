@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Header } from '../components';
 
-const Tarjetas = () => {
+const Tarjeta = () => {
   const [collections, setCollections] = useState([]);
 
   useEffect(() => {
@@ -52,4 +52,4 @@ const Tarjetas = () => {
   );
 };
 
-export default Tarjetas;
+export default Tarjeta;

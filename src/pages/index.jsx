@@ -1,5 +1,5 @@
 export { default as Ecommerce } from './Ecommerce';
-export { default as Tarjetas } from './Tarjetas';
+export { default as Tarjeta } from './Tarjeta';
 export { default as Kanban } from './Kanban';
 export { default as Empleados } from './Employees';
 export { default as Registrar } from './Registrar';
