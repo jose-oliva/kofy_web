@@ -20,7 +20,12 @@ const MainDoctor = () => {
         const extractedData = {};
         data.resultado.forEach((item) => {
           const [key, value] = item.split(': ');
-          extractedData[key.toLowerCase().replace(/ /g, '')] = value;
+          if (key.toLowerCase().includes('medicamentos recetados')) {
+            // eslint-disable-next-line dot-notation
+            extractedData['medicamentosrecetados'] = value.split(', ');
+          } else {
+            extractedData[key.toLowerCase().replace(/ /g, '')] = value;
+          }
         });
         setSummary(extractedData);
       })
@@ -160,7 +165,11 @@ const MainDoctor = () => {
               <p className="font-semibold text-white text-2xl">Recordatorios</p>
             </div>
             <div className="flex justify-between items-center ">
-              <p className="font-semibold text-white text-2xl"> {summary.medicamentosrecetados} </p>
+              <p className="font-semibold text-white text-2xl">
+                {summary.medicamentosrecetados && summary.medicamentosrecetados.map((medicamento, index) => (
+                  <div key={index}>- {medicamento}</div>
+                ))}
+              </p>
             </div>
           </div>
         </div>
