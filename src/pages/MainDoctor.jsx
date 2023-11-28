@@ -18,9 +18,12 @@ const MainDoctor = () => {
     peso: 'N/A',
     alergias: ['N/A'],
     enfermedades: ['N/A'],
+    sessionText: '',
     medicamentosrecetados: ['N/A'],
   });
+  const [editableText, setEditableText] = useState('');
 
+  /*
   useEffect(() => {
     fetch('https://kofy-back.onrender.com/dashboard/getSummary', {
       method: 'POST',
@@ -46,6 +49,36 @@ const MainDoctor = () => {
         console.log(error);
       });
   }, []);
+  */
+
+  useEffect(() => {
+    fetch('https://kofy-back.onrender.com/dashboard/getSummary', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ accessId: '0PdZPDW' }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const sessionText = data.resultado.join(' ');
+        setSummary({ ...summary, sessionText });
+        setEditableText(sessionText);
+      })
+      // eslint-disable-next-line
+      .catch((error) => console.log(error));
+  }, []);
+
+  const handleEditSession = () => {
+    fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionText: editableText }),
+    })
+      .then((response) => response.json())
+      // eslint-disable-next-line
+      .then((data) => console.log(data))
+      // eslint-disable-next-line
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="mt-24">
@@ -165,17 +198,18 @@ const MainDoctor = () => {
           </div>
           <div className="mt-10 flex gap-10 flex-wrap justify-center">
             <div>
-              <div>
-                <p>
-                  <span className="text-3xl font-semibold">N/A</span>
-                </p>
-              </div>
+              <textarea
+                value={editableText}
+                onChange={(e) => setEditableText(e.target.value)}
+                className="w-full h-40 p-2 border-2 border-gray-300 rounded-md"
+              />
               <div className="flex justify-center mt-10">
                 <Button
                   color="white"
                   bgColor={currentColor}
-                  text="Editar Sesion"
+                  text="Editar Sesión"
                   borderRadius="10px"
+                  onClick={handleEditSession}
                 />
               </div>
             </div>
