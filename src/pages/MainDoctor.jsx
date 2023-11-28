@@ -59,7 +59,7 @@ const MainDoctor = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        const sessionText = data.resultado.join(' ');
+        const sessionText = data.resultado.join('\n');
         setSummary({ ...summary, sessionText });
         setEditableText(sessionText);
       })
@@ -68,10 +68,16 @@ const MainDoctor = () => {
   }, []);
 
   const handleEditSession = () => {
+    const editedTextArray = editableText.split('\n');
+    const dataToSend = {
+      accessId: '0PdZPDW',
+      resultado: editedTextArray,
+    };
+
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ sessionText: editableText }),
+      body: JSON.stringify(dataToSend),
     })
       .then((response) => response.json())
       // eslint-disable-next-line
@@ -202,12 +208,13 @@ const MainDoctor = () => {
                 value={editableText}
                 onChange={(e) => setEditableText(e.target.value)}
                 className="w-full h-40 p-2 border-2 border-gray-300 rounded-md"
+                style={{ resize: 'none' }}
               />
               <div className="flex justify-center mt-10">
                 <Button
                   color="white"
                   bgColor={currentColor}
-                  text="Editar Sesión"
+                  text="Editar sesión"
                   borderRadius="10px"
                   onClick={handleEditSession}
                 />
