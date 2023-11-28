@@ -7,13 +7,25 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 const MainDoctor = () => {
   const { currentColor } = useStateContext();
-  const [summary, setSummary] = useState({});
+  const [summary, setSummary] = useState({
+    firmadopor: 'N/A',
+    fecha: 'N/A',
+    genero: 'N/A',
+    paciente: 'N/A',
+    edad: 'N/A',
+    sangre: 'N/A',
+    altura: 'N/A',
+    peso: 'N/A',
+    alergias: ['N/A'],
+    enfermedades: ['N/A'],
+    medicamentosrecetados: ['N/A'],
+  });
 
   useEffect(() => {
     fetch('https://kofy-back.onrender.com/dashboard/getSummary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ accessId: '0ysieo2' }),
+      body: new URLSearchParams({ accessId: '0PdZPDW' }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -21,16 +33,18 @@ const MainDoctor = () => {
         data.resultado.forEach((item) => {
           const [key, value] = item.split(': ');
           if (key.toLowerCase().includes('medicamentos recetados')) {
-            // eslint-disable-next-line dot-notation
+            // eslint-disable-next-line
             extractedData['medicamentosrecetados'] = value.split(', ');
           } else {
             extractedData[key.toLowerCase().replace(/ /g, '')] = value;
           }
         });
-        setSummary(extractedData);
+        setSummary({ ...summary, ...extractedData });
       })
-      // eslint-disable-next-line
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        // eslint-disable-next-line
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -41,7 +55,7 @@ const MainDoctor = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-50 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Paciente (Masculino)</p>
+              <p className="font-bold text-gray-400"> Paciente ({summary.genero}) </p>
               <p className="text-2xl"> {summary.paciente} </p>
             </div>
             <div
@@ -56,10 +70,10 @@ const MainDoctor = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-60 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Edad</p>
+              <p className="font-bold text-gray-400"> Edad </p>
               <p className="text-2xl"> {summary.edad} </p>
-              <p className="font-bold text-gray-400">Sangre</p>
-              <p className="text-2xl">N/A</p>
+              <p className="font-bold text-gray-400"> Sangre </p>
+              <p className="text-2xl"> {summary.sangre} </p>
             </div>
             <div
               type="icon"
@@ -73,10 +87,10 @@ const MainDoctor = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-60 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Altura</p>
-              <p className="text-2xl">N/A cm</p>
-              <p className="font-bold text-gray-400">Peso</p>
-              <p className="text-2xl">N/A kg</p>
+              <p className="font-bold text-gray-400"> Altura </p>
+              <p className="text-2xl"> {summary.altura} cm </p>
+              <p className="font-bold text-gray-400"> Peso </p>
+              <p className="text-2xl"> {summary.peso} kg </p>
             </div>
             <div
               type="icon"
@@ -94,7 +108,11 @@ const MainDoctor = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Alergias</p>
-              <p className="text-2xl">N/A</p>
+              <p className="text-2xl">
+                {summary.alergias.map((alergia, index) => (
+                  <div key={index}>- {alergia}</div>
+                ))}
+              </p>
             </div>
             <div
               type="icon"
@@ -109,7 +127,11 @@ const MainDoctor = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Enfermedades</p>
-              <p className="text-2xl">N/A</p>
+              <p className="text-2xl">
+                {summary.enfermedades.map((enfermedad, index) => (
+                  <div key={index}>- {enfermedad}</div>
+                ))}
+              </p>
             </div>
             <div
               type="icon"
@@ -123,7 +145,7 @@ const MainDoctor = () => {
       </div>
 
       <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
           <div className="flex justify-between">
             <p className="font-semibold">Sesion de Escucha</p>
             <div className="flex items-center gap-4">
@@ -166,7 +188,7 @@ const MainDoctor = () => {
             </div>
             <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl">
-                {summary.medicamentosrecetados && summary.medicamentosrecetados.map((medicamento, index) => (
+                {summary.medicamentosrecetados.map((medicamento, index) => (
                   <div key={index}>- {medicamento}</div>
                 ))}
               </p>
