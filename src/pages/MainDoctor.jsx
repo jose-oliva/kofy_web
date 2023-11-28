@@ -178,7 +178,7 @@ const MainDoctor = () => {
       </div>
 
       <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-760">
           <div className="flex justify-between">
             <p className="font-semibold">Sesion de Escucha</p>
             <div className="flex items-center gap-4">
@@ -197,7 +197,7 @@ const MainDoctor = () => {
             </div>
           </div>
           <div className="mt-10 flex gap-10 flex-wrap justify-center">
-            <div>
+            <div className="w-full">
               <textarea
                 value={editableText}
                 onChange={(e) => setEditableText(e.target.value)}
