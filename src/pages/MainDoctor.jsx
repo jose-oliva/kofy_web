@@ -125,7 +125,7 @@ const MainDoctor = () => {
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
           <div className="flex justify-between">
-            <p className="font-semibold text-xl">Sesion de Escucha</p>
+            <p className="font-semibold">Sesion de Escucha</p>
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
@@ -152,7 +152,7 @@ const MainDoctor = () => {
                 <Button
                   color="white"
                   bgColor={currentColor}
-                  text="Descargar Sesion"
+                  text="Editar Sesion"
                   borderRadius="10px"
                 />
               </div>
@@ -162,7 +162,7 @@ const MainDoctor = () => {
         <div>
           <div className=" rounded-2xl md:w-400 p-4 m-3" style={{ backgroundColor: currentColor }}>
             <div className="flex justify-between items-center ">
-              <p className="font-semibold text-white text-2xl">Recordatorios</p>
+              <p className="font-semibold text-white">Recordatorios</p>
             </div>
             <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl">
