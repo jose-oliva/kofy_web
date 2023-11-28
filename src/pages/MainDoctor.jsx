@@ -74,16 +74,22 @@ const MainDoctor = () => {
       resultado: editedTextArray,
     };
 
+    console.log('Enviando datos modificados:', dataToSend);
+
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dataToSend),
     })
       .then((response) => response.json())
-      // eslint-disable-next-line
-      .then((data) => console.log(data))
-      // eslint-disable-next-line
-      .catch((error) => console.log(error));
+      .then((data) => {
+        // eslint-disable-next-line
+        console.log('Respuesta de la API:', data);
+      })
+      .catch((error) => {
+        // eslint-disable-next-line
+        console.error('Error al enviar datos:', error);
+      });
   };
 
   return (
