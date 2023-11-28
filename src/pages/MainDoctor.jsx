@@ -54,7 +54,7 @@ const MainDoctor = () => {
               <p className="font-bold text-gray-400">Edad</p>
               <p className="text-2xl"> {summary.edad} </p>
               <p className="font-bold text-gray-400">Sangre</p>
-              <p className="text-2xl">O-</p>
+              <p className="text-2xl">N/A</p>
             </div>
             <div
               type="icon"
@@ -69,9 +69,9 @@ const MainDoctor = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Altura</p>
-              <p className="text-2xl">170 cm</p>
+              <p className="text-2xl">N/A cm</p>
               <p className="font-bold text-gray-400">Peso</p>
-              <p className="text-2xl">71 kg</p>
+              <p className="text-2xl">N/A kg</p>
             </div>
             <div
               type="icon"
@@ -140,7 +140,7 @@ const MainDoctor = () => {
             <div>
               <div>
                 <p>
-                  <span className="text-3xl font-semibold">Aqui va la info</span>
+                  <span className="text-3xl font-semibold">N/A</span>
                 </p>
               </div>
               <div className="flex justify-center mt-10">
@@ -158,6 +158,8 @@ const MainDoctor = () => {
           <div className=" rounded-2xl md:w-400 p-4 m-3" style={{ backgroundColor: currentColor }}>
             <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl">Recordatorios</p>
+            </div>
+            <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl"> {summary.medicamentosrecetados} </p>
             </div>
           </div>
