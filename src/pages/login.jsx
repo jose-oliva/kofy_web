@@ -5,10 +5,11 @@ import admins from '../data/admin.png';
 import doctors from '../data/doctors.png';
 import '../App.css';
 
-function LoginPage({ onLogin }) {
+function LoginPage({ onLogin, onSpecialLogin }) {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
   const [error, setError] = useState('');
 
   const handleSignUpClick = () => {
@@ -28,6 +29,15 @@ function LoginPage({ onLogin }) {
     }
   };
 
+  const handleSpecialLogin = (e) => {
+    e.preventDefault();
+    if (token === '001') {
+      onSpecialLogin();
+    } else {
+      setError('Token inválido');
+    }
+  };
+
   return (
     <div className={`container ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
@@ -35,11 +45,17 @@ function LoginPage({ onLogin }) {
           <form action="#" className="sign-in-form">
             <h2 className="title">Hola 👋 doctor/a</h2>
             <p className="social-text">Por favor ingresa el Token de tu paciente</p>
+            {error && <div className="error-message">{error}</div>}
             <div className="input-field">
               <FontAwesomeIcon icon={faKitMedical} className="my-auto_mx-auto" />
-              <input type="text" placeholder="Token" />
+              <input
+                type="text"
+                placeholder="Token"
+                value={token}
+                onChange={(e) => setToken(e.target.value)}
+              />
             </div>
-            <button type="button" className="btn" onClick={handleSignUpClick}>
+            <button type="button" className="btn" onClick={handleSpecialLogin}>
               Iniciar Sesion
             </button>
           </form>

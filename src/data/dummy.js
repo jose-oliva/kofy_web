@@ -584,8 +584,8 @@ export const scheduleData = [
     Id: 1,
     Subject: 'Expo-Ingenierias',
     Location: 'Centro de Congresos - ITESM',
-    StartTime: '2023-11-23T16:00:00.000Z',
-    EndTime: '2023-11-23T19:00:00.000Z',
+    StartTime: '2023-11-23T21:10:00.000Z',
+    EndTime: '2023-11-23T23:59:59.000Z',
     CategoryColor: '#1aaa55',
   },
 ];
