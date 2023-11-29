@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineAreaChart, AiOutlineBarChart } from 'react-icons/ai';
 import { FiEdit, FiPieChart, FiBarChart, FiCreditCard } from 'react-icons/fi';
-import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield, BsFillExclamationSquareFill } from 'react-icons/bs';
+import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
@@ -365,15 +365,6 @@ export const links = [
       {
         name: 'apilada',
         icon: <AiOutlineBarChart />,
-      },
-    ],
-  },
-  {
-    title: 'cerrar sesion',
-    links: [
-      {
-        name: 'Salir',
-        icon: <BsFillExclamationSquareFill />,
       },
     ],
   },

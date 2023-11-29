@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { GoDiamond } from 'react-icons/go';
-import { IoMan, IoMedkit, IoWater, IoWarning, IoScale } from 'react-icons/io5';
-// IoMaleFemale, IoWoman,
+import { IoMaleFemale, IoMedkit, IoWater, IoWarning, IoScale } from 'react-icons/io5';
 import { Button } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const MainDoctor = () => {
+  const navigate = useNavigate();
   const { currentColor } = useStateContext();
   const [summary, setSummary] = useState({
     firmadopor: 'N/A',
@@ -22,34 +23,6 @@ const MainDoctor = () => {
     medicamentosrecetados: ['N/A'],
   });
   const [editableText, setEditableText] = useState('');
-
-  /*
-  useEffect(() => {
-    fetch('https://kofy-back.onrender.com/dashboard/getSummary', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ accessId: '0PdZPDW' }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const extractedData = {};
-        data.resultado.forEach((item) => {
-          const [key, value] = item.split(': ');
-          if (key.toLowerCase().includes('medicamentos recetados')) {
-            // eslint-disable-next-line
-            extractedData['medicamentosrecetados'] = value.split(', ');
-          } else {
-            extractedData[key.toLowerCase().replace(/ /g, '')] = value;
-          }
-        });
-        setSummary({ ...summary, ...extractedData });
-      })
-      .catch((error) => {
-        // eslint-disable-next-line
-        console.log(error);
-      });
-  }, []);
-  */
 
   useEffect(() => {
     const token = localStorage.getItem('userToken');
@@ -110,6 +83,8 @@ const MainDoctor = () => {
         // eslint-disable-next-line
         console.error('Error al enviar datos:', error);
       });
+    localStorage.removeItem('userToken');
+    navigate('/login');
   };
 
   return (
@@ -128,7 +103,7 @@ const MainDoctor = () => {
               style={{ backgroundColor: currentColor }}
               className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
             >
-              <IoMan />
+              <IoMaleFemale />
             </div>
           </div>
         </div>

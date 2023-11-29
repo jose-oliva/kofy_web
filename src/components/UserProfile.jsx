@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
+import { useNavigate } from 'react-router-dom';
 
 import Button from './Button';
 import { userProfileData } from '../data/dummy';
@@ -8,16 +8,16 @@ import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
 
 const UserProfile = () => {
-  const navigate = useNavigate(); // Hook para redireccionar
+  const navigate = useNavigate();
   const { currentColor } = useStateContext();
 
   const handleLogout = () => {
     // eslint-disable-next-line no-console
-    console.log('Cerrar sesión iniciado'); // Confirmamos que la función se está llamando
+    console.log('Cerrar sesión iniciado');
 
-    navigate('/login'); // Redirigir al usuario al login
+    navigate('/login');
     // eslint-disable-next-line no-console
-    console.log('Navegación a /login ejecutada'); // Confirmamos que navigate se ha llamado
+    console.log('Navegación a /login ejecutada');
   };
 
   return (
@@ -69,7 +69,7 @@ const UserProfile = () => {
           text="Cerrar Sesión"
           borderRadius="10px"
           width="full"
-          onClick={handleLogout} // Agregamos el manejador de eventos aquí
+          onClick={handleLogout}
         />
       </div>
     </div>

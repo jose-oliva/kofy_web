@@ -14,8 +14,6 @@ const Tarjeta = () => {
     fetch('https://kofy-back.onrender.com/dashboard/getCardCollections', options)
       .then((response) => response.json())
       .then((data) => {
-        // eslint-disable-next-line
-        console.log('Datos recibidos de la API:', data);
         setCollections(data);
       })
       .catch((error) => {
@@ -24,29 +22,43 @@ const Tarjeta = () => {
       });
   }, []);
 
+  const renderMedia = (card) => {
+    if (card.is_video) {
+      return (
+        <video width="320" height="240" controls>
+          <source src={card.video_link} type="video/mp4" />
+          <track kind="captions" />
+          Tu navegador no soporta videos.
+        </video>
+      );
+    }
+    if (card.image_link) {
+      return <img src={`https://kofy-back.onrender.com/images/${card.image_link}`} alt={card.content} />;
+    }
+    return null;
+  };
+
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header title="Tarjetas" />
       {collections.map((collection) => (
-        <div key={collection.id}>
-          <h1>{collection.name}</h1>
-          <img src={collection.icon} alt={collection.name} />
-          <div>
-            {collection.cards.map((card) => (
-              <div key={card.id} style={{ border: '1px solid black', margin: '10px', padding: '10px' }}>
-                <h2>{card.content}</h2>
-                {card.is_video ? (
-                  // eslint-disable-next-line
-                  <video width="320" height="240" controls>
-                    <source src={card.video_link} type="video/mp4" />
-                    Tu navegador no soporta videos.
-                  </video>
-                ) : (
-                  <img src={`https://kofy-back.onrender.com/images/${card.image_link}`} alt={card.content} />
-                )}
-              </div>
-            ))}
-          </div>
+        <div key={collection.id} className="mb-6">
+          <Header title={collection.name} />
+          <img src={collection.icon} alt={collection.name} className="w-8 h-8 mb-2" />
+          {collection.cards.length > 0 ? (
+            <div>
+              {collection.cards.map((card) => (
+                <div key={card.id} style={{ border: '1px solid black', margin: '10px', padding: '10px', position: 'relative' }}>
+                  <h2>{card.content}</h2>
+                  {renderMedia(card)}
+                  <button type="button" style={{ position: 'absolute', bottom: '10px' }}>Editar</button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div style={{ border: '1px solid black', margin: '10px', padding: '10px', position: 'relative' }}>
+              <button type="button" style={{ position: 'absolute', bottom: '10px' }}>Editar</button>
+            </div>
+          )}
         </div>
       ))}
     </div>
