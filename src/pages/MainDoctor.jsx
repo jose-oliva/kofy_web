@@ -69,14 +69,16 @@ const MainDoctor = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  let session;
+
   const handleEditSession = () => {
     // eslint-disable-next-line
     console.log('handleEditSession iniciada');
-    const resultado = editableText.split('\n');
-    // const session = { result };
+    const result = editableText.split('\n');
+    session = { result };
     const dataToSend = {
       accessId: '0PdZPDW',
-      resultado,
+      session,
     };
 
     // eslint-disable-next-line
@@ -85,7 +87,7 @@ const MainDoctor = () => {
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dataToSend),
+      body: dataToSend,
     })
       .then((response) => {
         if (!response.ok) {
