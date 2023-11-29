@@ -63,11 +63,11 @@ const MainDoctor = () => {
         setSummary({ ...summary, sessionText });
         setEditableText(sessionText);
       })
-      // eslint-disable-next-line
       .catch((error) => console.log(error));
   }, []);
 
   const handleEditSession = () => {
+    console.log('handleEditSession iniciada');
     const editedTextArray = editableText.split('\n');
     const dataToSend = {
       accessId: '0PdZPDW',
@@ -83,11 +83,9 @@ const MainDoctor = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // eslint-disable-next-line
         console.log('Respuesta de la API:', data);
       })
       .catch((error) => {
-        // eslint-disable-next-line
         console.error('Error al enviar datos:', error);
       });
   };
