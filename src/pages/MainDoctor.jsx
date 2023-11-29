@@ -78,8 +78,12 @@ const MainDoctor = () => {
     formData.append('accessId', '0PdZPDW');
     formData.append('session', JSON.stringify(session));
 
+    const object = {};
+    formData.forEach((value, key) => {
+      object[key] = value;
+    });
     // eslint-disable-next-line
-    console.log('Enviando datos modificados:', formData);
+    console.log('Enviando datos modificados:', object);
 
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
       method: 'POST',
