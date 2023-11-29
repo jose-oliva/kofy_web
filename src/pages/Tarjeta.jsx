@@ -128,7 +128,7 @@ const Tarjeta = () => {
           </div>
           <div className="flex justify-around items-center">
             <div>
-              <p className="font-bold text-gray-400 flex justify-center"> 4 </p>
+              <p className="font-bold text-gray-400 flex justify-center"> 5 </p>
               <p className="text-2xl"> Inhalar lentamente, apretar inhalador una vez y continuar inhalando </p>
               <img src="https://kofy-back.onrender.com/images/inhalador/inhalador-04.png" alt="Sostener Imagen" className="w-full mt-4 rounded-lg" />
             </div>
@@ -154,7 +154,7 @@ const Tarjeta = () => {
           </div>
           <div className="flex justify-around items-center">
             <div>
-              <p className="font-bold text-gray-400 flex justify-center"> 4 </p>
+              <p className="font-bold text-gray-400 flex justify-center"> 6 </p>
               <p className="text-2xl"> Sacar inhalador y aguantar respiración por 10 segundos, luego exhalar </p>
               <img src="https://kofy-back.onrender.com/images/inhalador/inhalador-05.png" alt="Sostener Imagen" className="w-full mt-4 rounded-lg" />
             </div>
@@ -180,7 +180,7 @@ const Tarjeta = () => {
           </div>
           <div className="flex justify-around items-center">
             <div>
-              <p className="font-bold text-gray-400 flex justify-center"> 4 </p>
+              <p className="font-bold text-gray-400 flex justify-center"> 7 </p>
               <p className="text-2xl"> Coloca de nuevo la tapa sobre la boquilla y asegurarse de que este cerrada </p>
               <img src="https://kofy-back.onrender.com/images/inhalador/inhalador-06.png" alt="Sostener Imagen" className="w-full mt-4 rounded-lg" />
             </div>
