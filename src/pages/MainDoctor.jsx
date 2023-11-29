@@ -73,10 +73,10 @@ const MainDoctor = () => {
     // eslint-disable-next-line
     console.log('handleEditSession iniciada');
     const resultado = editableText.split('\n');
-    const session = { resultado };
+    // const session = { resultado };
     const dataToSend = {
       accessId: '0PdZPDW',
-      session,
+      resultado,
     };
 
     // eslint-disable-next-line
