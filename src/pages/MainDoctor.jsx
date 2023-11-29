@@ -81,7 +81,7 @@ const MainDoctor = () => {
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dataToSend),
+      body: dataToSend,
     })
       .then((response) => {
         if (!response.ok) {
