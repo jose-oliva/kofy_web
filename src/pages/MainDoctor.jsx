@@ -59,6 +59,7 @@ const MainDoctor = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log('Datos recibidos de la API:', data);
         const sessionText = data.resultado.join('\n');
         setSummary({ ...summary, sessionText });
         setEditableText(sessionText);
