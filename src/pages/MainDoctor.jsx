@@ -92,7 +92,7 @@ const MainDoctor = () => {
       <h1 className="flex justify-center"> Hola! 👋 {summary.firmadopor} </h1>
       <h1 className="flex justify-center"> Aqui esta la información de la sesion con fecha de {summary.fecha} </h1>
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-50 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-50 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400"> Paciente ({summary.genero}) </p>
@@ -107,7 +107,7 @@ const MainDoctor = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-60 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-60 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400"> Edad </p>
@@ -124,7 +124,7 @@ const MainDoctor = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-60 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-60 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400"> Altura </p>
@@ -144,7 +144,7 @@ const MainDoctor = () => {
       </div>
 
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Alergias</p>
@@ -163,7 +163,7 @@ const MainDoctor = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Enfermedades</p>
