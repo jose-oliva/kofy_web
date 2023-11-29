@@ -7,7 +7,6 @@ const Tarjeta = () => {
   const [cardCollections, setCardCollections] = useState([]);
 
   useEffect(() => {
-    // Simula la llamada a la API y actualiza el estado con la respuesta
     const fetchCardCollections = async () => {
       try {
         const response = await fetch('https://kofy-back.onrender.com/dashboard/getCardCollections');
@@ -49,7 +48,7 @@ const Tarjeta = () => {
                     {card.is_video ? (
                       <iframe width="280" height="240" src={card.video_link} title={`${card.content} Video`} className="object-cover rounded-lg" />
                     ) : (
-                      <img src={card.image_link} alt={`${card.content} Imagen`} className="w-full mt-4 rounded-lg" />
+                      <img src={`https://kofy-back.onrender.com${card.image_link}`} alt={`${card.content} Imagen`} className="w-full mt-4 rounded-lg" />
                     )}
                   </div>
                 </div>
