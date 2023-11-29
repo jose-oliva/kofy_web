@@ -27,7 +27,7 @@ const Tarjeta = () => {
       <Header title="Tarjetas" />
       <div className="flex flex-wrap justify-justify">
         {cardCollections.map((collection) => (
-          <div key={collection.id} className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl w-full lg:w-80 p-8 pt-9 m-3 border border-gray-300">
+          <div key={collection.id} className="border border-gray-300 m-3 p-3 rounded-xl">
             <div className="flex justify-around items-center">
               <div
                 type="icon"
@@ -41,15 +41,17 @@ const Tarjeta = () => {
               </div>
             </div>
             {collection.cards.map((card) => (
-              <div key={card.id} className="flex justify-around items-center flex-grow mt-4">
-                <div>
-                  <p className="font-bold text-gray-400 flex justify-center">{card.index}</p>
-                  <p className="text-2xl">{card.content}</p>
-                  {card.is_video ? (
-                    <iframe width="280" height="240" src={card.video_link} title={`${card.content} Video`} className="object-cover rounded-lg" />
-                  ) : (
-                    <img src={card.image_link} alt={`${card.content} Imagen`} className="w-full mt-4 rounded-lg" />
-                  )}
+              <div key={card.id} className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl mt-4 p-4 border border-gray-300">
+                <div className="flex justify-around items-center flex-grow">
+                  <div>
+                    <p className="font-bold text-gray-400 flex justify-center">{card.index}</p>
+                    <p className="text-2xl">{card.content}</p>
+                    {card.is_video ? (
+                      <iframe width="280" height="240" src={card.video_link} title={`${card.content} Video`} className="object-cover rounded-lg" />
+                    ) : (
+                      <img src={card.image_link} alt={`${card.content} Imagen`} className="w-full mt-4 rounded-lg" />
+                    )}
+                  </div>
                 </div>
                 <div className="flex justify-around items-center mt-4">
                   <button type="button" className="bg-blue-500 text-white p-2 rounded-md">
