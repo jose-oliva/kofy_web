@@ -7,6 +7,7 @@ const Tarjeta = () => {
   const [cardCollections, setCardCollections] = useState([]);
 
   useEffect(() => {
+    // Simula la llamada a la API y actualiza el estado con la respuesta
     const fetchCardCollections = async () => {
       try {
         const response = await fetch('https://kofy-back.onrender.com/dashboard/getCardCollections');
