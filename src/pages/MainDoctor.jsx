@@ -71,7 +71,7 @@ const MainDoctor = () => {
     const editedTextArray = editableText.split('\n');
     const dataToSend = {
       accessId: '0PdZPDW',
-      resultado: editedTextArray,
+      editedTextArray,
     };
 
     console.log('Enviando datos modificados:', dataToSend);
