@@ -7,7 +7,6 @@ const Tarjeta = () => {
   const [cardCollections, setCardCollections] = useState([]);
 
   useEffect(() => {
-    // Simula la llamada a la API y actualiza el estado con la respuesta
     const fetchCardCollections = async () => {
       try {
         const response = await fetch('https://kofy-back.onrender.com/dashboard/getCardCollections');
@@ -51,16 +50,16 @@ const Tarjeta = () => {
                     <img src={card.image_link} alt={`${card.content} Imagen`} className="w-full mt-4 rounded-lg" />
                   )}
                 </div>
+                <div className="flex justify-around items-center mt-4">
+                  <button type="button" className="bg-blue-500 text-white p-2 rounded-md">
+                    Editar
+                  </button>
+                  <button type="button" className="bg-red-500 text-white p-2 rounded-md">
+                    Eliminar
+                  </button>
+                </div>
               </div>
             ))}
-            <div className="flex justify-around items-center mt-4">
-              <button type="button" className="bg-blue-500 text-white p-2 rounded-md">
-                Editar
-              </button>
-              <button type="button" className="bg-red-500 text-white p-2 rounded-md">
-                Eliminar
-              </button>
-            </div>
           </div>
         ))}
       </div>
