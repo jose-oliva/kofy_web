@@ -69,13 +69,11 @@ const MainDoctor = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  let session;
-
   const handleEditSession = () => {
     // eslint-disable-next-line
     console.log('handleEditSession iniciada');
     const resultado = editableText.split('\n');
-    session = { resultado };
+    const session = { resultado };
     const dataToSend = {
       accessId: '0PdZPDW',
       session,
