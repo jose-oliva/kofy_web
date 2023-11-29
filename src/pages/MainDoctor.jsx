@@ -74,18 +74,17 @@ const MainDoctor = () => {
     console.log('handleEditSession iniciada');
     const resultado = editableText.split('\n');
     const session = { resultado };
-    const dataToSend = {
-      accessId: '0PdZPDW',
-      session,
-    };
+    const formData = new URLSearchParams();
+    formData.append('accessId', '0PdZPDW');
+    formData.append('session', JSON.stringify(session));
 
     // eslint-disable-next-line
     console.log('Enviando datos modificados:', dataToSend);
 
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: dataToSend,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: formData,
     })
       .then((response) => {
         if (!response.ok) {
