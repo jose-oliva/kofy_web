@@ -31,11 +31,32 @@ function LoginPage({ onLogin, onSpecialLogin }) {
 
   const handleSpecialLogin = (e) => {
     e.preventDefault();
-    if (token === '001') {
-      onSpecialLogin();
-    } else {
-      setError('Token inválido');
-    }
+
+    const formData = new URLSearchParams();
+    formData.append('accessId', token);
+
+    fetch('https://kofy-back.onrender.com/dashboard/getSummary', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formData,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Token inválido o error en la solicitud');
+        }
+        return response.json();
+      })
+      .then(() => {
+        localStorage.setItem('userToken', token);
+        onSpecialLogin();
+      })
+      .catch((fetchError) => {
+        // eslint-disable-next-line
+        console.error('Error:', fetchError);
+        setError('Token inválido o error en la solicitud');
+      });
   };
 
   return (
