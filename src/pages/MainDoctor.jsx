@@ -59,15 +59,18 @@ const MainDoctor = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        // eslint-disable-next-line
         console.log('Datos recibidos de la API:', data);
         const sessionText = data.resultado.join('\n');
         setSummary({ ...summary, sessionText });
         setEditableText(sessionText);
       })
+      // eslint-disable-next-line
       .catch((error) => console.log(error));
   }, []);
 
   const handleEditSession = () => {
+    // eslint-disable-next-line
     console.log('handleEditSession iniciada');
     const result = editableText.split('\n');
     const session = { result };
@@ -76,6 +79,7 @@ const MainDoctor = () => {
       session,
     };
 
+    // eslint-disable-next-line
     console.log('Enviando datos modificados:', dataToSend);
 
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
@@ -90,9 +94,11 @@ const MainDoctor = () => {
         return response.json();
       })
       .then((data) => {
+        // eslint-disable-next-line
         console.log('Respuesta de la API:', data);
       })
       .catch((error) => {
+        // eslint-disable-next-line
         console.error('Error al enviar datos:', error);
       });
   };

@@ -14,6 +14,8 @@ const Tarjeta = () => {
     fetch('https://kofy-back.onrender.com/dashboard/getCardCollections', options)
       .then((response) => response.json())
       .then((data) => {
+        // eslint-disable-next-line
+        console.log('Datos recibidos de la API:', data);
         setCollections(data);
       })
       .catch((error) => {
