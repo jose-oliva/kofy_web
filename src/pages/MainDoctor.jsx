@@ -79,7 +79,7 @@ const MainDoctor = () => {
     formData.append('session', JSON.stringify(session));
 
     // eslint-disable-next-line
-    console.log('Enviando datos modificados:', dataToSend);
+    console.log('Enviando datos modificados:', formData);
 
     fetch('https://kofy-back.onrender.com/dashboard/verifySummary', {
       method: 'POST',
