@@ -68,10 +68,10 @@ const MainDoctor = () => {
 
   const handleEditSession = () => {
     console.log('handleEditSession iniciada');
-    const editedTextArray = editableText.split('\n');
+    const session = editableText.split('\n');
     const dataToSend = {
       accessId: '0PdZPDW',
-      editedTextArray,
+      session,
     };
 
     console.log('Enviando datos modificados:', dataToSend);
@@ -153,7 +153,7 @@ const MainDoctor = () => {
               <p className="font-bold text-gray-400">Alergias</p>
               <p className="text-2xl">
                 {summary.alergias.map((alergia, index) => (
-                  <div key={index}>- {alergia}</div>
+                  <div key={index}> {alergia} </div>
                 ))}
               </p>
             </div>
@@ -172,7 +172,7 @@ const MainDoctor = () => {
               <p className="font-bold text-gray-400">Enfermedades</p>
               <p className="text-2xl">
                 {summary.enfermedades.map((enfermedad, index) => (
-                  <div key={index}>- {enfermedad}</div>
+                  <div key={index}> {enfermedad} </div>
                 ))}
               </p>
             </div>
@@ -234,7 +234,7 @@ const MainDoctor = () => {
             <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl">
                 {summary.medicamentosrecetados.map((medicamento, index) => (
-                  <div key={index}>- {medicamento}</div>
+                  <div key={index}> {medicamento} </div>
                 ))}
               </p>
             </div>
