@@ -52,10 +52,15 @@ const MainDoctor = () => {
   */
 
   useEffect(() => {
+    const token = localStorage.getItem('userToken');
+
+    const formData = new URLSearchParams();
+    formData.append('accessId', token);
+
     fetch('https://kofy-back.onrender.com/dashboard/getSummary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ accessId: '0PdZPDW' }),
+      body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -70,12 +75,13 @@ const MainDoctor = () => {
   }, []);
 
   const handleEditSession = () => {
+    const token = localStorage.getItem('userToken');
     // eslint-disable-next-line
     console.log('handleEditSession iniciada');
     const resultado = editableText.split('\n');
     const session = { resultado };
     const formData = new URLSearchParams();
-    formData.append('accessId', '0PdZPDW');
+    formData.append('accessId', token);
     formData.append('session', JSON.stringify(session));
 
     const object = {};
