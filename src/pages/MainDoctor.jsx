@@ -218,7 +218,7 @@ const MainDoctor = () => {
                 <Button
                   color="white"
                   bgColor={currentColor}
-                  text="Editar sesión"
+                  text="EDITAR"
                   borderRadius="10px"
                   onClick={handleEditSession}
                 />
