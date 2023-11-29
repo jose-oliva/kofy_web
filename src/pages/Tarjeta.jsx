@@ -87,7 +87,7 @@ const Tarjeta = () => {
           </div>
         </div>
 
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center border border-gray-300">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center border border-gray-300 h-30">
           <div className="flex justify-around items-center">
             <div
               type="icon"
@@ -139,7 +139,7 @@ const Tarjeta = () => {
           </div>
         </div>
 
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-full rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center border border-gray-300">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-30 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center border border-gray-300">
           <div className="flex justify-around items-center">
             <div
               type="icon"
