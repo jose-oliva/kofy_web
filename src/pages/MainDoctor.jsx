@@ -68,7 +68,8 @@ const MainDoctor = () => {
 
   const handleEditSession = () => {
     console.log('handleEditSession iniciada');
-    const session = editableText.split('\n');
+    const result = editableText.split('\n');
+    const session = { result };
     const dataToSend = {
       accessId: '0PdZPDW',
       session,
@@ -81,7 +82,12 @@ const MainDoctor = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dataToSend),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log('Respuesta de la API:', data);
       })
